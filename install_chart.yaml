@@ -1,0 +1,22 @@
+---
+- name: Deploy NGINX on EKS
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Include Kubernetes configuration
+      include_vars:
+        file: kubeconfig.yml
+
+    - name: Add Bitnami repository
+      command: helm repo add bitnami https://charts.bitnami.com/bitnami
+      args:
+        creates: "{{ kubeconfig_path }}"
+
+    - name: Update Helm repositories
+      command: helm repo update
+      args:
+        creates: "{{ kubeconfig_path }}"
+
+    - name: Deploy NGINX Helm chart
+      command: helm install nginx-revision bitnami/nginx --kubeconfig "{{ kubeconfig_path }}"
