@@ -27,8 +27,8 @@ jobs:
     - name: Configure AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.TF_VAR_access_key }}
-        aws-secret-access-key: ${{ secrets.TF_VAR_secret_key }}
+        TF_VAR_access_key: ${{ secrets.TF_VAR_access_key }}
+        TF_VAR_secret_key: ${{ secrets.TF_VAR_secret_key }}
         aws-region: eu-west-2  # Change this to your desired region
 
     - name: Install kubectl
