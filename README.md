@@ -1,6 +1,8 @@
 # eks cluster with ansible playbook installing helm nginx 
 
+
 In this repo I have created an eks cluster using terrafrom whilst also utilizing variables to secure my secrets (aws_acccess_key and secret_key) whilst also utiliing ansible playbook to spin up an nginx helm chart on the newly spun up Eks cluster - below are the steps to take when creating using the terminal 
+
 
 Steps 
 
