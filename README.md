@@ -31,7 +31,7 @@ then the same with helm chart using
 -
 -     helm uninstall revision name (in this case its nginx-revision) 
 
-if not known you can also use helm history command to get the revision name
+if not known you can also use helm history command to get the revision name then proceed to the previous step 
 
 -     helm history    
 
